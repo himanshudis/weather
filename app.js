@@ -2,6 +2,7 @@ const express=require('express');
 const request=require('request');
 const ejs=require('ejs');
 const app=express();
+const port=process.env.PORT || 7500
 const bodyparser=require('body-parser');
 app.use(bodyparser.json())
 const encoder=bodyparser.urlencoded({
@@ -52,7 +53,7 @@ app.post('/weather',encoder,function(req,res){
         })
     })
     })
-app.listen(7500);
+app.listen(port);
 
 
 
